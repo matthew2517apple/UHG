@@ -6,17 +6,19 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 @app.route('/index.html')
+def home():
+    return render_template("index.html")
+
+@app.route('/insert.html')
 def display():
     songs = get()
-    return render_template('index.html', entries = songs)
+    return render_template('insert.html', entries = songs)
 
 
 @app.route('/add', methods=['POST'])
 def add():
     create(request.form['title'], request.form['artist'], request.form['genre'])
     return redirect(url_for('display'))
-    #create(request.get_json())
-    #return "song added"
 
 if __name__ == '__main__':
     app.run(debug=True)
