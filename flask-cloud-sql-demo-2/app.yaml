@@ -2,7 +2,7 @@
 runtime: python37
 
 env_variables:
-  CLOUD_SQL_USERNAME: flask-demo 
+  CLOUD_SQL_USERNAME: database-hood-user 
   CLOUD_SQL_PASSWORD: password$
-  CLOUD_SQL_DATABASE_NAME: flask-demo
-  CLOUD_SQL_CONNECTION_NAME: flask-demo-338222:us-east1:flask-demo-3
+  CLOUD_SQL_DATABASE_NAME: database-hood-db
+  CLOUD_SQL_CONNECTION_NAME: database-hood:us-east1:database-hood
