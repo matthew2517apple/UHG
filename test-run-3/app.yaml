@@ -1,8 +1,8 @@
 #app.yaml
-runtime: python37
+runtime: python39
 
 env_variables:
   CLOUD_SQL_USERNAME: database-hood-user 
   CLOUD_SQL_PASSWORD: password$
   CLOUD_SQL_DATABASE_NAME: database-hood-db
-  CLOUD_SQL_CONNECTION_NAME: database-hood:us-east1:database-hood
+  CLOUD_SQL_CONNECTION_NAME: test-run-3-347118:us-east1:database-hood
