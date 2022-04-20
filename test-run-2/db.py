@@ -30,5 +30,12 @@ def get_songs():
         songs = cursor.fetchall()
         return songs    
 
+def create(songtitle, songartist, songgenre):
+    conn = open_connection()
+    with conn.cursor() as cursor:
+        cursor.execute('INSERT INTO songs (title, artist, genre) VALUES(%s, %s, %s)',
+                       (songtitle, songartist, songgenre))
+    conn.commit()
+    conn.close()
 
 
