@@ -19,8 +19,6 @@ def display():
 
 @app.route('/insert_form')
 def insert_form():
-    #songs = get_songs()
-    #return render_template('insert.html', songs = songs)
     return render_template('insert.html')
 
 
