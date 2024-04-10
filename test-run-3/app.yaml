@@ -3,6 +3,6 @@ runtime: python39
 
 env_variables:
   CLOUD_SQL_USERNAME: database-hood-mjc15 
-  CLOUD_SQL_PASSWORD: 
+  CLOUD_SQL_PASSWORD: 123
   CLOUD_SQL_DATABASE_NAME: database_hood_mjc15
   CLOUD_SQL_CONNECTION_NAME: database-hood-mjc15:us-east4:database-hood-mjc15
