@@ -1,6 +1,6 @@
 # main.py controller
 from flask import Flask, redirect, request, url_for, render_template, jsonify
-from db import get_songs, get_one_song, create
+from db import get_branches, get_one_branch, create
 
 app = Flask(__name__)
 
@@ -17,10 +17,10 @@ def display():
     branches = get_branches()
     return render_template('display.html', branches = branches)
 
-#Single song
+#Single branch
 @app.route('/branches/<int:id>/')
 def branch(name):
-    song = get_one_song(name)
+    branch = get_one_branch(name)
     return render_template('branch.html', branch=branch)
 
 @app.route('/insert_form')
