@@ -35,9 +35,9 @@ def get_one_branch(name):
     conn = open_connection()
     with conn.cursor() as cursor:
         #result = 
-        cursor.execute("SELECT * FROM songs WHERE branch_name = %s", [name])
-        song = cursor.fetchone()
-        return song        
+        cursor.execute("SELECT * FROM branch WHERE branch_name = %s", [name])
+        branch = cursor.fetchone()
+        return branch        
 
 def create(name, city, assets):
     conn = open_connection()
