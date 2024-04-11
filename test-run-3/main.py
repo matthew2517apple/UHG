@@ -1,6 +1,6 @@
 # main.py controller
 from flask import Flask, redirect, request, url_for, render_template, jsonify
-from db import get_branches, get_customers, get_one_branch, create
+from db import get_branches, get_customers, get_one_branch, create, get_perryridge_customers
 
 app = Flask(__name__)
 
@@ -20,15 +20,19 @@ def display():
     return render_template('display.html', customers = customers)
 
 #Single branch
-@app.route('/branches/<int:id>/')
-def branch(name):
-    branch = get_one_branch(name)
-    return render_template('branch.html', branch=branch)
+#@app.route('/branches/<int:id>/')
+#def branch(name):
+#    branch = get_one_branch(name)
+#    return render_template('branch.html', branch=branch)
 
 @app.route('/insert_form')
 def insert_form():
     return render_template('insert.html')
 
+@app.route('/perryridge')
+def perryridge():
+    customers = get_perryridge_customers()
+    return render_template('display.html', customers = customers)
 
 @app.route('/add', methods=['POST'])
 def add():
