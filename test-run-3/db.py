@@ -51,6 +51,6 @@ def create(name, street, city):
     conn = open_connection()
     with conn.cursor() as cursor:
         cursor.execute('INSERT INTO customer (customer_name, customer_street, customer_city) VALUES(%s, %s, %s)',
-                       (customer_name, customer_street, customer_city))
+                       (name, street, city))
     conn.commit()
     conn.close()
