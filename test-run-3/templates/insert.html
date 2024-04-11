@@ -1,23 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h2>Add a Song</h2>
+    <h2>Add a Customer</h2>
     <form action="{{ url_for('add') }}" method="POST">
         <div class="form-group">
-        <label>Title</label>: <input type=text name=title class="form-control" value="Type here">
+        <label>Name</label>: <input type=text name=customer_name class="form-control" value="Type here">
         </div>
         <div class="form-group">
-        <label>Artist</label>: <input type=text name=artist class="form-control" value="Type here">
+        <label>Street</label>: <input type=text name=customer_street class="form-control" value="Type here">
         </div>
         <div class="form-group">
-        <label>Genre</label>: <input type=text name=genre class="form-control" value="Type here">
+        <label>City</label>: <input type=text name=customer_city class="form-control" value="Type here">
         </div>   
 	    <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <!--h2>Songs</h2>
+    <!--h2>Customers</h2>
     <ul>
     {% for entry in entries %}
-        <li>{{ entry.title }}, {{ entry.artist }}, {{ entry.genre}}</li>
+        <li>{{ entry.customer_name }}, {{ entry.customer_street }}, {{ entry.customer_city}}</li>
 
     {% endfor %}
     </ul-->
