@@ -1,6 +1,6 @@
 # main.py controller
 from flask import Flask, redirect, request, url_for, render_template, jsonify
-from db import get_branches, get_one_branch, create
+from db import get_branches, get_customers, get_one_branch, create
 
 app = Flask(__name__)
 
@@ -14,8 +14,10 @@ def about():
 
 @app.route('/display')
 def display():
-    branches = get_branches()
-    return render_template('display.html', branches = branches)
+    #branches = get_branches()
+    #return render_template('display.html', branches = branches)
+    customers = get_customers()
+    return render_template('display.html', customers = customers)
 
 #Single branch
 @app.route('/branches/<int:id>/')
