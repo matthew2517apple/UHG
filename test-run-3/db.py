@@ -47,10 +47,10 @@ def get_one_branch(name):
         branch = cursor.fetchone()
         return branch        
 
-def create(name, city, assets):
+def create(name, street, city):
     conn = open_connection()
     with conn.cursor() as cursor:
-        cursor.execute('INSERT INTO branch (branch_name, branch_city, assets) VALUES(%s, %s, %s)',
-                       (name, city, assets))
+        cursor.execute('INSERT INTO customer (customer_name, customer_street, customer_city) VALUES(%s, %s, %s)',
+                       (customer_name, customer_street, customer_city))
     conn.commit()
     conn.close()
