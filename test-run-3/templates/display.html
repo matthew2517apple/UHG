@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  <h1>Branches</h1>
+  <h1>Customers</h1>
   <h3>Name - City - Assets</h3>
   <ul class="list-group">
-    {% for branch in branches %}
+    {% for customer in customers %}
         <li class="list-group-item">
-          <a href="branches/{{ branch.branch_name }}">
-            {{ branch.branch_name }} - {{ branch.branch_city }} - {{ branch.assets }}
+          <a href="customers/{{ customer.customer_name }}">
+            {{ customer.customer_name }} - {{ customer.customer_street }} - {{ customer.customer_city }}
           </a>
         </li>
     {% endfor %}
