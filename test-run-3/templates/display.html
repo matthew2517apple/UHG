@@ -4,7 +4,11 @@
   <h1>Branches</h1>
   <ul class="list-group">
     {% for branch in branches %}
-      <li class="list-group-item"><a href="branches/{{branch.branch_name}}">{{branch.branch_city}}</a></li>
+        <li class="list-group-item">
+          <a href="branches/{{ branch.branch_name }}">
+            {{ branch.branch_name }} - {{ branch.branch_city }} - {{ branch.assets }}
+          </a>
+        </li>
     {% endfor %}
   </ul>
 {% endblock %}
