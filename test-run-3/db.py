@@ -31,6 +31,14 @@ def get_branches():
         branches = cursor.fetchall()
         return branches    
 
+def get_customers():
+    conn = open_connection()
+    with conn.cursor() as cursor:
+        #result = 
+        cursor.execute('SELECT * FROM customer;')
+        branches = cursor.fetchall()
+        return customers  
+
 def get_one_branch(name):
     conn = open_connection()
     with conn.cursor() as cursor:
