@@ -14,14 +14,14 @@ def about():
 
 @app.route('/display')
 def display():
-    songs = get_songs()
-    return render_template('display.html', songs = songs)
+    branches = get_branches()
+    return render_template('display.html', branches = branches)
 
 #Single song
-@app.route('/songs/<int:id>/')
-def song(id):
-    song = get_one_song(id)
-    return render_template('song.html', song=song)
+@app.route('/branches/<int:id>/')
+def branch(name):
+    song = get_one_song(name)
+    return render_template('branch.html', branch=branch)
 
 @app.route('/insert_form')
 def insert_form():
