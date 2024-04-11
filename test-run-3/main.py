@@ -32,7 +32,7 @@ def insert_form():
 
 @app.route('/add', methods=['POST'])
 def add():
-    create(request.form['title'], request.form['artist'], request.form['genre'])
+    create(request.form['customer_name'], request.form['customer_street'], request.form['customer_city'])
     return redirect(url_for('display'))
 
 if __name__ == '__main__':
