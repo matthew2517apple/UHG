@@ -36,7 +36,7 @@ def get_customers():
     with conn.cursor() as cursor:
         #result = 
         cursor.execute('SELECT * FROM customer;')
-        branches = cursor.fetchall()
+        customers = cursor.fetchall()
         return customers  
 
 def get_one_branch(name):
