@@ -23,26 +23,26 @@ def open_connection():
         return e
     return conn
 
-def get_songs():
+def get_branches():
     conn = open_connection()
     with conn.cursor() as cursor:
         #result = 
-        cursor.execute('SELECT * FROM songs;')
-        songs = cursor.fetchall()
-        return songs    
+        cursor.execute('SELECT * FROM branch;')
+        branches = cursor.fetchall()
+        return branches    
 
-def get_one_song(id):
+def get_one_branch(name):
     conn = open_connection()
     with conn.cursor() as cursor:
         #result = 
-        cursor.execute("SELECT * FROM songs where id = %s", [id])
+        cursor.execute("SELECT * FROM songs WHERE branch_name = %s", [name])
         song = cursor.fetchone()
         return song        
 
-def create(songtitle, songartist, songgenre):
+def create(name, city, assets):
     conn = open_connection()
     with conn.cursor() as cursor:
-        cursor.execute('INSERT INTO songs (title, artist, genre) VALUES(%s, %s, %s)',
-                       (songtitle, songartist, songgenre))
+        cursor.execute('INSERT INTO branch (branch_name, branch_city, assets) VALUES(%s, %s, %s)',
+                       (name, city, assets))
     conn.commit()
     conn.close()
