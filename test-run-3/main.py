@@ -16,8 +16,8 @@ def about():
 def display():
     #branches = get_branches()
     #return render_template('display.html', branches = branches)
-    customers = get_customers()
-    return render_template('display.html', customers = customers)
+    customers = get_customers()                                        # <-- EDIT HERE.
+    return render_template('display.html', customers = customers)        # <-- EDIT HERE.
 
 #Single branch
 #@app.route('/branches/<int:id>/')
@@ -30,13 +30,13 @@ def insert_form():
     return render_template('insert.html')
 
 @app.route('/perryridge')
-def perryridge():
-    customers = get_perryridge_customers()
+def perryridge():                                                                # <-- EDIT HERE.
+    customers = get_perryridge_customers()                                        # <-- EDIT HERE.
     return render_template('display.html', customers = customers)
 
 @app.route('/add', methods=['POST'])
 def add():
-    create(request.form['customer_name'], request.form['customer_street'], request.form['customer_city'])
+    create(request.form['customer_name'], request.form['customer_street'], request.form['customer_city'])   # <-- EDIT HERE.
     return redirect(url_for('display'))
 
 if __name__ == '__main__':
