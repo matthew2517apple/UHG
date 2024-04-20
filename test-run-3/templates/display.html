@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  <h1>Customers</h1>
-  <h3>Name - Street - City</h3>
+  <h1>Menu</h1>
+  <h3>Name - Description - Price</h3>
   <ul class="list-group">
-    {% for customer in customers %}
+    {% for item in menu_items %}
         <li class="list-group-item">
-          <a href="customers/{{ customer.customer_name }}">
-            {{ customer.customer_name }} - {{ customer.customer_street }} - {{ customer.customer_city }}
+          <a href="menu_items/{{ item.itemID }}">
+            {{ item.itemName }} - {{ item.description }} - {{ item.price }}
           </a>
         </li>
     {% endfor %}
