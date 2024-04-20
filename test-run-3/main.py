@@ -16,8 +16,8 @@ def about():
 def display():
     #branches = get_branches()
     #return render_template('display.html', branches = branches)
-    customers = get_customers()                                        # <-- EDIT HERE.
-    return render_template('display.html', customers = customers)        # <-- EDIT HERE.
+    menu_items = get_menu()
+    return render_template('display.html', menu_items = menu_items)        # <-- EDIT HERE.
 
 #Single branch
 #@app.route('/branches/<int:id>/')
