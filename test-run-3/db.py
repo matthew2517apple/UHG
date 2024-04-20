@@ -31,13 +31,12 @@ def get_branches():
         branches = cursor.fetchall()
         return branches    
 
-def get_customers():
+def get_menu():
     conn = open_connection()
     with conn.cursor() as cursor:
-        #result = 
-        cursor.execute('SELECT * FROM customer;')
-        customers = cursor.fetchall()
-        return customers  
+        cursor.execute('SELECT * FROM menu_items;')
+        menu = cursor.fetchall()
+        return menu  
 
 def get_perryridge_customers():
     conn = open_connection()
